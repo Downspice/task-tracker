@@ -9,13 +9,14 @@ datasource db {
 }
 
 generator client {
-  provider = "prisma-client"
-  output          = "../src/generated/prisma"
-  moduleFormat  = "cjs"
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
 }
 
 model Task {
-  id    String     @default(uuid()) @id
-  name  String  
-  description  String?
+  id          String  @id @default(uuid())
+  name        String
+  description String?
+  @@map('task')
 }
