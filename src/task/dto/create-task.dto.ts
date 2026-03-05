@@ -1,4 +1,4 @@
 export class CreateTaskDto {
-    name: String
-    description?: String
+    name: string
+    description?: string
 }
