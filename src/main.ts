@@ -14,19 +14,19 @@ async function bootstrap() {
   forbidNonWhitelisted: true,
   transform: true,
   stopAtFirstError: true,
-  exceptionFactory: (errors) => {
-    const result = errors.map((error) => {
-      const message = error.constraints 
-        ? Object.values(error.constraints)[0] 
-        : `Property ${error.property} is not allowed`;
+  // exceptionFactory: (errors) => {
+  //   const result = errors.map((error) => {
+  //     const message = error.constraints 
+  //       ? Object.values(error.constraints)[0] 
+  //       : `Property ${error.property} is not allowed`;
 
-      return {
-        field: error.property,
-        message: message,
-      };
-    });
-    return new BadRequestException(result);
-  },
+  //     return {
+  //       field: error.property,
+  //       message: message,
+  //     };
+  //   });
+  //   return new BadRequestException(result);
+  // },
   }));
   await app.listen(process.env.PORT ?? 3000);
 }

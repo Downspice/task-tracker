@@ -11,10 +11,10 @@ export class TaskService {
     return newTask;
   }
 
-  async findAll() { 
+  async findAll() {
     try {
       const tasks = await this.prismaService.task.findMany()
-      return tasks
+      return tasks;
     } catch (error) {
       console.log(error)
     }
