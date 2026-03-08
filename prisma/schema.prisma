@@ -18,5 +18,10 @@ model Task {
   id          String  @id @default(uuid())
   name        String
   description String?
-  @@map('task')
+}
+
+model User {
+  id       String @id @default(uuid())
+  email    String @unique
+  password String
 }
